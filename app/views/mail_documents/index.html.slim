@@ -1,0 +1,25 @@
+h1 Listing mail_documents
+
+table
+  thead
+    tr
+      th Text
+      th Video
+      th Picture
+      th
+      th
+      th
+
+  tbody
+    - @mail_documents.each do |mail_document|
+      tr
+        td = mail_document.text
+        td = mail_document.video
+        td = mail_document.picture
+        td = link_to 'Show', mail_document
+        td = link_to 'Edit', edit_mail_document_path(mail_document)
+        td = link_to 'Destroy', mail_document, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Mail document', new_mail_document_path

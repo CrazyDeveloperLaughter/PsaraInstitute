@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable, :lockable, :confirmable,
          :omniauthable, omniauth_providers: [:twitter]
+
+  scope :send_mail_magazine, -> { where("magazine = ?", "購読する")}
 end

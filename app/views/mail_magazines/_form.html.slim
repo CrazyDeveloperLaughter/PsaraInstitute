@@ -1,0 +1,12 @@
+= form_for @mail_magazine do |f|
+  - if @mail_magazine.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@mail_magazine.errors.count, "error")} prohibited this mail_magazine from being saved:"
+      ul
+        - @mail_magazine.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .actions = f.submit

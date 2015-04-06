@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Text:
+  = @mail_document.text
+p
+  strong Video:
+  = @mail_document.video
+p
+  strong Picture:
+  = @mail_document.picture
+
+= link_to 'Edit', edit_mail_document_path(@mail_document)
+'|
+= link_to 'Back', mail_documents_path
