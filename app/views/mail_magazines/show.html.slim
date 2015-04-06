@@ -1,0 +1,11 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @mail_magazine.title
+
+= link_to 'Send', mail_magazines_send_mail_path(@mail_magazine)
+'|
+= link_to 'Edit', edit_mail_magazine_path(@mail_magazine)
+'|
+= link_to 'Back', mail_magazines_path

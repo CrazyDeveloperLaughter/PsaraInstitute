@@ -2,6 +2,16 @@ require 'resque/server'
 
 Rails.application.routes.draw do
 
+  resources :mail_documents
+
+  resources :mail_magazines
+
+  namespace :users do
+    namespace :user_profiles do
+      resources :avatars
+    end
+  end
+
   resources :documents
 
   namespace :posts do
@@ -46,6 +56,10 @@ Rails.application.routes.draw do
 
   get 'static_pages/sitemap'
 
+  get 'static_pages/google-web-master' => 'static_pages#google2fce42d86d6074a7.html'
+
+  get 'mail_magazine/send_mail/:id' => 'mail_magazines#send_mail'
+
   root to: 'static_pages#company', :layout => "layouts/slide"
   
   get 'inquiry' => 'inquiry#index'              # 入力画面
@@ -54,7 +68,10 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  get 'google' => 'static_pages#google'
+
   mount Resque::Server.new, at: "/resque"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
