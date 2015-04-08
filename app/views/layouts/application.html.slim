@@ -12,34 +12,50 @@ html lang="en"
     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
     = stylesheet_link_tag "application", :media => "all"
     = favicon_link_tag
-    = javascript_include_tag "application"
+    = include_gon
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    /<!-- jQueryUI -->
+    link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css"
+    /<!-- Tag-it CSS本体 -->
+    link href="css/jquery.tagit.css" rel="stylesheet" type="text/css"
+    /<!-- jquery　本体-->
+    script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"
+    /<!-- jquery-UI　本体-->
+    script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"
+    / <!-- Tag-it JS本体 -->
+    script src="js/tag-it.js" type="text/javascript" charset="utf-8"
+
 
   body data-spy="scroll" data-target=".navbar-example"
-    .navbar.navbar-default.navbar-static-top.navbar-fixed-top
-        .container
+    .header.navbar.navbar-default.navbar-static-top.navbar-fixed-top
+        .container.header
           button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
             span.icon-bar
             span.icon-bar
             span.icon-bar
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              li= link_to "会員登録", new_user_registration_path
-              li.dropdown#dLabel type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                = link_to "ログイン", new_user_session_path
-                span.caret
-              ul.dropdown-menu role="menu" aria-labelledby="dLabel"
-                li= link_to "ログイン", new_user_session_path
-                li= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
+              li= link_to image_tag("psara.png", width: 25, height: 20)
               li= link_to "プサラ・インスティテュート", static_pages_home_path
+              li.active= link_to "PsaraMedicalNews", posts_path
               li= link_to "ロゴマークの由来", static_pages_logo_path
               li= link_to "サービス", static_pages_job_path
-              li= link_to "メッセージ", root_path
-              li.active= link_to "お問い合わせ", static_pages_contact_path
+              li.active= link_to "メッセージ", root_path
+              li.active= link_to "お問い合わせ", inquiry_path
+              li= link_to "会員登録", new_user_registration_path
+              li.dropdown#dLabel type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="ログイン"
+              ul.dropdown-menu role="menu" aria-labelledby="dLabel"
+              li= link_to "ログイン", new_user_session_path
+              li= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
     = yield(:slideshow)
     .container
       .row
         .col-lg-9
           = bootstrap_flash
+          - set_meta_tags :title => 'PsaraInstitute'
+          - set_meta_tags :description => ''
+          - set_meta_tags :keywords => ''
+          - set_meta_tags :canonical => ''
           = yield
         .col-lg-3
 

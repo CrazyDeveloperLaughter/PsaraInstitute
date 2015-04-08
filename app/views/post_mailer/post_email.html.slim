@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+html lang="ja"
+  head
+  meta charset="UTF-8"
+
+body
+  p Psara Medical Magazine
+  p= "第" + @mail_magazine.id + "号"
+  p= @mail_magazine.title
+
+  - if @mail_documents.present?
+    - @mail_documents.each do |document|
+      - if mail_document.text.present?
+        .col-md-6.wel
+          .input-group= mail_document.text
+      - if mail_document.picture.present?
+        .col-md-6.well
+          .input-group
+            p.img-responsive= image_tag(document.picture_url)
+      - if mail_document.video.present?
+        .col-md-6.well
+          .input-group
+            p.img-responsive= image_tag(document.video_url(:screenshot).to_s, id: "video")

@@ -1,4 +1,24 @@
+require 'resque/server'
+
 Rails.application.routes.draw do
+
+  resources :mail_documents
+
+  resources :mail_magazines
+
+  namespace :users do
+    namespace :user_profiles do
+      resources :avatars
+    end
+  end
+
+  resources :posts
+
+  resources :documents
+
+  namespace :admin_users do
+    resources :mailmagazines
+  end
 
   devise_for :admin_users
 
@@ -7,6 +27,15 @@ Rails.application.routes.draw do
     :registrations => "users/registrations",
     :passwords     => "users/passwords"
   }
+
+  get '/auth/:provider/callback',    to: 'users#create',       as: :auth_callback
+  get '/auth/failure',               to: 'users#auth_failure', as: :auth_failure
+
+  namespace :users do 
+    get 'users/index'
+    get 'users/:name', :to => 'users#show'
+  end
+
   get 'static_pages/home'
 
   get 'static_pages/company'
@@ -19,13 +48,23 @@ Rails.application.routes.draw do
 
   get 'static_pages/job'
 
+  get 'static_pages/sitemap'
+
+  get 'static_pages/google-web-master' => 'static_pages#google2fce42d86d6074a7.html'
+
+  get 'mail_magazine/send_mail/:id' => 'mail_magazines#send_mail'
+
   root to: 'static_pages#company', :layout => "layouts/slide"
   
   get 'inquiry' => 'inquiry#index'              # 入力画面
   post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
   post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
 
-  resources :posts
+  get 'google' => 'static_pages#google'
+
+  post 'posts/confirm' => 'posts#confirm'
+
+  mount Resque::Server.new, at: "/resque"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

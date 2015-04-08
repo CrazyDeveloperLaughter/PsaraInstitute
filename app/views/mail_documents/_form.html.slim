@@ -1,0 +1,18 @@
+= form_for @mail_document do |f|
+  - if @mail_document.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@mail_document.errors.count, "error")} prohibited this mail_document from being saved:"
+      ul
+        - @mail_document.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :text
+    = f.text_area :text
+  .field
+    = f.label :video
+    = f.text_field :video
+  .field
+    = f.label :picture
+    = f.text_field :picture
+  .actions = f.submit

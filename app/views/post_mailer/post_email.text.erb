@@ -1,0 +1,33 @@
+===========================================
+  Psara Medical Magazine 第<%= @mail_magazine.id %>号: <%= @mail_magazine.title %>
+===========================================
+
+<% if @mail_documents.present? %>
+    <% @mail_documents.each do |document| %>
+      <% if mail_document.text.present? %>
+        <div class="col-md-6 wel">
+          <div class="input-group">
+            <%= mail_document.text %>
+          </div>
+        </div>
+      <% if mail_document.picture.present? %>
+        <div class="col-md-6 well">
+          <div class="input-group">
+            <p class="img-responsive">
+              <%= image_tag(document.picture_url) %>
+            </p>
+          </div>
+        </div>
+      <% if mail_document.video.present? %>
+        <div class="col-md-6 well">
+          <div class="input-group">
+            <p class="img-responsive">
+              <%= image_tag(document.video_url(:screenshot).to_s, id: "video") %>
+            </p>
+          </div>
+        </div>
+
+==========================================
+<p> Psara Medical Magazine の購読を停止されたい方
+</p>
+<%= link_to 'こちらです', "http://www.psara-institute.com/users/edit/#{user.id}" %>

@@ -1,22 +1,42 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: :show
   before_action :authenticate_admin_user!, except: [:show, :index]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action  :set_post_tags_to_gon, only: [:edit]
 
   # GET /posts
   # GET /posts.json
   def index
-    @q = Post.search(params[:q])
-    @posts = @q.result(distinct: true)
+    @posts = params[:tag].present? ? Post.tagged_with(params[:tag]) : Post.all
+    @q = @posts.search(params[:q])
+    @posts = @q.result(distinct: true).includes(:tags)
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
   def show
+    @post = Post.find(params[:id])
+    @documents = @post.documents.all
+    @document = @post.documents.build
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @document = Document.new
+  end
+
+  def confirm
+    @post = Post.new(post_params)
+    @documents = @post.documents.all
+    @document = @post.documents.build
+    if @post.valid?
+
+      render :action => 'confirm'
+
+    else
+
+      render :action => 'index'
+    end
+
   end
 
   # GET /posts/1/edit
@@ -72,9 +92,17 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:date, :subject, :body, :picture, :video)
+      params.require(:post).permit(:date, :subject, :body, :picture, :video, :tag_list, :genres_list)
     end
 
     def video
+    end
+
+    def set_post_tags_to_gon
+      gon.post_tags = @post.tag_list
+    end
+
+    def set_available_tags_to_gon
+      gon.available_tags = Post.tags_on(:tags).pluck(:name)
     end
 end
