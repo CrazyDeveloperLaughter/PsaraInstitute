@@ -24,6 +24,21 @@ class PostsController < ApplicationController
     @document = Document.new
   end
 
+  def confirm
+    @post = Post.new(post_params)
+    @documents = @post.documents.all
+    @document = @post.documents.build
+    if @post.valid?
+
+      render :action => 'confirm'
+
+    else
+
+      render :action => 'index'
+    end
+
+  end
+
   # GET /posts/1/edit
   def edit
     

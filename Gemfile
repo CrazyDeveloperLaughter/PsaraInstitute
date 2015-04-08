@@ -16,6 +16,7 @@ group :development, :test do
   gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
   gem 'pry-doc'    # methodを表示
   gem 'pry-byebug' # デバッグを実施
+  gem 'binding_of_caller'
 end
 
 group :production do
@@ -62,6 +63,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 # For devise
 gem 'devise'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 # Cloudinary
 gem 'cloudinary'
   # For uploderruby
@@ -85,3 +87,4 @@ gem 'gon'
 # SEO
 gem 'meta-tags'
 gem 'sitemap_generator'
+gem 'rails-erd'

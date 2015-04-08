@@ -14,7 +14,7 @@ javascript:
   ul
     - @post.errors.full_messages.each do |msg|
       li= msg
-= form_for(@post) do |f|
+= form_for(@post), :url => posts_confirm_path do |f|
   .post.form-group
     dl.dl-horizontal
       dt タイトル

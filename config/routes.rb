@@ -12,19 +12,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :posts
+
   resources :documents
-
-  namespace :posts do
-    resources :pictures
-  end
-
-  namespace :posts do
-    resources :videos
-  end
-
-  namespace :posts do
-    resources :documents
-  end
 
   namespace :admin_users do
     resources :mailmagazines
@@ -38,10 +28,14 @@ Rails.application.routes.draw do
     :passwords     => "users/passwords"
   }
 
+  get '/auth/:provider/callback',    to: 'users#create',       as: :auth_callback
+  get '/auth/failure',               to: 'users#auth_failure', as: :auth_failure
+
   namespace :users do 
     get 'users/index'
     get 'users/:name', :to => 'users#show'
   end
+
   get 'static_pages/home'
 
   get 'static_pages/company'
@@ -66,9 +60,9 @@ Rails.application.routes.draw do
   post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
   post 'inquiry/thanks' => 'inquiry#thanks'     # 送信完了画面
 
-  resources :posts
-
   get 'google' => 'static_pages#google'
+
+  post 'posts/confirm' => 'posts#confirm'
 
   mount Resque::Server.new, at: "/resque"
 
