@@ -27,13 +27,46 @@
 //
 // Example:
 // @link-color: #ff0000;
+
 @theme-color: #1073b9;
+@theme-color-serious: #053164;
 @color: #fff;
+@padding: 15px 30px 15px 15px;
+@border-radius: 5px;
+@border-radius-topic: 3px;
+@back: #eee;
+
+
+.topic {
+	border-radius: @border-radius-topic;
+
+	padding: @padding;
+	background-color: @theme-color-serious;
+	font-family:'メイリオ';
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.topHeader{
+    background-color:none !important;
+    border-color:none !important;
+}
+
+.scrolingHeader {
+	background-color:@theme-color !important;
+	border-color:@theme-color !important;
+}
 
 body {
-	margin-top: 60px;
+	margin-top: 100px !important;
 	margin-bottom: 100px;
 	position: relative;
+	padding: 10px !important;
+	border-radius: @border-radius-topic !important;
+}
+
+.carousel-inner img{
+    width: 100%;
 }
 
 .container {

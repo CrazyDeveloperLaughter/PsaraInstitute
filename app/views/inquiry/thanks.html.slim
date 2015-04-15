@@ -1,3 +1,14 @@
 .page-header
   h1 お問い合わせ
 p お問い合わせいただきありがとうございました。
+p 以下の内容を承りました。
+table
+  tr
+    th 御名前
+    td= @inquiry.name
+  tr
+    th メールアドレス
+    td= @inquiry.email
+  tr
+    th 内容
+    td= simple_format(@inquiry.message)
