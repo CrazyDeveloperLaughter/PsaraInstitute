@@ -36,8 +36,7 @@ h4.h4-title.glyphicon.glyphicon-globe Psara Medical News
               .img-responsive.well alt="Responsive image"
                 = link_to image_tag(post.video_url(:screenshot)), post
             p.post_text.well
-              strong.wel Summary
-              　= post.body
+              strong= post.body
       .col-lg-6
         .input-group
           p.pull-right
