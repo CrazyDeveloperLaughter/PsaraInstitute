@@ -9,7 +9,7 @@ p#notice= notice
         .input-group= image_tag(@post.picture_url) if @post.picture.present?
     - if @post.video.present?  
       .col-md-6.well
-        .input-group= image_tag(@post.video_url(:screenshot).to_s, id: "video")
+        img src="post.video_url(:screenshot)" href="post.video_url(:screenshot)"
     - if @documents.present?
       - @documents.each do |document|
         - if document.text.present?

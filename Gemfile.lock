@@ -306,6 +306,7 @@ DEPENDENCIES
   carrierwave
   carrierwave-mongoid
   cloudinary
+  coderay
   coffee-rails (~> 4.0.0)
   daemon-spawn
   devise
