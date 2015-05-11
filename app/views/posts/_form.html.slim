@@ -26,7 +26,7 @@ javascript:
       dt 動画
       dd= f.file_field :video, :accept => 'video/*'
       dt 本文 
-      textarea.form-control = f.text_area :body
+      dd= f.cktext_area :body
 
   .clearfix
     p.pull-right
