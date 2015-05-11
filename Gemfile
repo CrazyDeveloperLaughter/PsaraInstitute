@@ -86,3 +86,6 @@ gem 'gon'
 gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'coderay'
+
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'paperclip
