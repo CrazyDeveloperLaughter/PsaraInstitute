@@ -17,7 +17,14 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
-//= require ckeditor/init
+//= require bootstrap-wysihtml5
+
+$(document).ready(function() {
+  return $(".textarea").wysihtml5();
+});
+
+$('.textarea').wysihtml5();
+$('.textarea').val();
 
 $(document).scroll(function() {    
     var scroll = $(window).scrollTop();

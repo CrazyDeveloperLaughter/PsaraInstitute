@@ -1,0 +1,7 @@
+= javascript_tag do
+  var $squire_description = '= raw @squire.description.gsub("'", "\\\\'")';
+
+- model_class = Squire
+div class="page-header"
+  h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

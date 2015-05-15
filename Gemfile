@@ -87,5 +87,4 @@ gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'coderay'
 
-gem 'ckeditor', github: 'galetahub/ckeditor'
-gem 'paperclip'
+gem 'bootstrap-wysihtml5-rails', '~> 0.3.3.6'
