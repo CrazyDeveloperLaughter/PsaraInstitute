@@ -32,9 +32,7 @@ h4.h4-title.glyphicon.glyphicon-globe Psara Medical News
             - if post.picture.present?
               .img-responsive.well alt="Responsive image"
                 = link_to image_tag post.picture.thumb.url
-            - if post.video.present?
-              .img-responsive.well alt="Responsive image"
-                = link_to image_tag(post.video_url(:screenshot)), post
+            .img-responsive.well alt="Responsive image"
             - if post.body.present?
               p.post_text.well
                 strong= post.body

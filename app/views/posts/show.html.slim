@@ -17,11 +17,11 @@ p#notice= notice
         - if document.text.present?
           .col-md-6.well
             .input-group= document.text
-        - if document.picture.present?
+        - if document.picture
           .col-md-6.well
             .input-group
               p.img-responsive= image_tag(document.picture_url)
-        - if document.video.present?
+        - if document.video
           .col-md-6.well
             .input-group
               p.img-responsive= image_tag(document.video_url(:screenshot).to_s, id: "video")
