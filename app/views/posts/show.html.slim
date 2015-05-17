@@ -17,14 +17,14 @@ p#notice= notice
         - if document.text.present?
           .col-md-6.well
             .input-group= document.text
-        - if document.picture
+        - if document.picture.present?
           .col-md-6.well
             .input-group
               p.img-responsive= image_tag(document.picture_url)
-        - if document.video
+        - if document.video.present?
           .col-md-6.well
-            .input-group
-              p.img-responsive= image_tag(document.video_url(:screenshot).to_s, id: "video")
+            .input-group 
+              p.img-responsive= image_tag(document.video_url.to_s, id: "video")
         - if admin_user_signed_in?
           .col-md-6.well
             .input-group= link_to 'Delete', document_path(document), method: :delete, data: { confirm: '削除してもよろしいですか？' }, :class => "btn  btn-primary"

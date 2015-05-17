@@ -9,7 +9,7 @@ p#notice = notice
         .input-group alt="Responsive image"= image_tag(@document.picture_url)
     -if @document.video
       .col-md-6.well
-        .input-group alt="Responsive image"= image_tag(@document.video_url(:screenshot).to_s, id: "video")
+        .input-group alt="Responsive image"= image_tag(@document.video_url.to_s, id: "video")
     .col-md-6
       .well= link_to 'Edit', edit_document_path(@document)
       .well= link_to 'Back', post_path(@document.post_id)
