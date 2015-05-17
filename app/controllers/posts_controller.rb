@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: :show
   before_action :authenticate_admin_user!, except: [:show, :index]
   before_action :set_post, only: [:edit, :update, :destroy]
   before_action  :set_post_tags_to_gon, only: [:edit]
@@ -78,9 +77,6 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:date, :subject, :body, :picture, :video, :tag_list, :genres_list)
-    end
-
-    def video
     end
 
     def set_post_tags_to_gon
