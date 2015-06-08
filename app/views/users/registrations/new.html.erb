@@ -3,22 +3,34 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+      <div class="row margin-bottom-20 padding-5">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-0">
+          <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+        </div>
+      </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="form-group">
+    <%= f.label :password %><br />
     <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+      <div class="row margin-bottom-20 padding-5">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-0">
+          <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+        </div>
+      </div>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <div class="row margin-bottom-20 padding-5">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-0">
+          <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+        </div>
+      </div>
   </div>
 
   <div class="field">
@@ -26,9 +38,15 @@
     <%= f.radio_button :magazine, '購読する', class: :rd %>購読する<br />
     <%= f.radio_button :magazine, '購読しない', class: :rd %>購読しない<br />
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+
+  <div class="form-group">
+      <div class="row margin-bottom-20 padding-5">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-0">
+          <%= f.submit "Sign up" %>
+        </div>
+      </div>
   </div>
+
 <% end %>
 
 <%= render "users/shared/links" %>
