@@ -1,45 +1,47 @@
 - if admin_user_signed_in?
   = link_to '投稿する', new_post_path, :class => "btn btn-danger"
 
-.container.well
-  = search_form_for @q do |f|
-
-    .row
-      .col-lg-6
-        .input-group
-          span.input-group-btn
-            button.btn.btn-default type="button" タイトル
-          = f.search_field :body, class: "form-control", placeholder: "Search for ..."
-      .col-lg-6
-        .input-group
-          span.input-group-btn
-            button.btn.btn-default type="button" 記事内容
-          = f.search_field :body, class: "form-control", placeholder: "Search for..."
-      .col-lg-6
-        .input-group.input-group-btn type="button"
-          = f.submit class: "form-control btn-primary btn", placeholder: "検索"
+= search_form_for @q do |f|
+  .row
+    .col-lg-6
+      .input-group
+        span.input-group-btn
+          button.btn.btn-default type="button" タイトル
+        = f.search_field :body, class: "form-control", placeholder: "Search for ..."
+    .col-lg-6
+      .input-group
+        span.input-group-btn
+          button.btn.btn-default type="button" 記事内容
+        = f.search_field :body, class: "form-control", placeholder: "Search for..."
+    .col-lg-6
+      .input-group.input-group-btn type="button"
+        = f.submit class: "form-control btn-primary btn", placeholder: "検索"
 
 h4.h4-title.glyphicon.glyphicon-globe Psara Medical News
 - @posts.each do |post|
-  .container.well
+  .form-group
     .row
-      .col-lg-6
-        .input-group
-          span.input-group-btn
-            h5.well.boy
+    .responsive
+        .responsive.input-group
+          .responsive.input-group-btn.well
+            .responsive.well.boy
+              = "No. #{post.id}"
               = post.subject
               small.pull-right= post.date
             - if post.picture.present?
-              .img-responsive.well alt="Responsive image"
-                = link_to image_tag post.picture.thumb.url
-            .img-responsive.well alt="Responsive image"
+              .responsive.well
+                .responsive= link_to image_tag(post.picture.url, class: "image", :alt => "ニュース#{params[:id]}番", width: 250, height: 250), post_path(post.id)
+
+            - if post.video.present?
+              .responsive.well
+                .responsive= link_to image_tag(post.video_url(:screenshot).to_s, id: "image", :alt => "ニュース#{params[:id]}番", width: 250, height: 250, id: "video"), post_path(post.id)
             - if post.body.present?
-              p.post_text.well
+              p.post_text.well.responsive
                 strong= post.body
-      .col-lg-6
-        .input-group
-          p.pull-right
-            = link_to '詳細', post , :class => "btn btn-primary"
-            - if admin_user_signed_in?
-              = link_to '編集', edit_post_path(post) , :class => "btn btn-success"
-              = link_to '削除', post, method: :delete, data: { confirm: '本当に削除しますか？' } , :class => "btn btn-warning"
+    
+            .input-group
+              p.pull-right
+               = link_to '詳細', post , :class => "btn btn-primary"
+              - if admin_user_signed_in?
+                = link_to '編集', edit_post_path(post) , :class => "btn btn-success"
+                = link_to '削除', post, method: :delete, data: { confirm: '本当に削除しますか？' } , :class => "btn btn-warning"

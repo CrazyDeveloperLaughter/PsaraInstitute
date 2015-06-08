@@ -29,22 +29,44 @@
 // @link-color: #ff0000;
 
 @theme-color: #1073b9;
+@theme-color-alpha: rgba(10, 115, 185, 0.7);
 @theme-color-serious: #053164;
-@color: #fff;
+@theme-color-serious-alpha: rgba(005, 49, 100, 0.5);
+@w: #fff;
+@b: #000;
+@w-alpha: rgba(024, 140, 240, 0.7);
 @padding: 15px 30px 15px 15px;
 @border-radius: 5px;
 @border-radius-topic: 3px;
 @back: #eee;
 
+@padding: 15px;
+
+@border-radius: 5px;
+
+.header {
+	background-color: @theme-color-serious-alpha;
+	a {
+	color: @w !important;
+	}
+}
+
+.navbar-collapse {
+	border-color: none !important;
+	background-color: none !important;
+}
+
 
 .topic {
 	border-radius: @border-radius-topic;
-
+	color: @w !important;
 	padding: @padding;
 	background-color: @theme-color-serious;
 	font-family:'メイリオ';
 	margin-top: 10px;
 	margin-bottom: 10px;
+	border: solid 2px @w !important;
+	border-radius: @border-radius !important;
 }
 
 .topHeader{
@@ -53,8 +75,33 @@
 }
 
 .scrolingHeader {
-	background-color:@theme-color !important;
-	border-color:@theme-color !important;
+	background-color:@theme-color-alpha !important;
+
+	a{
+		color: @w !important;
+	}
+
+	a:hover {
+		color: black !important;
+	}
+}
+
+
+// About slideshow
+.screen {
+	border-radius: @border-radius !important;
+}
+
+.slide-box {
+    width:100%;
+    height:100%;
+    background: @w-alpha;
+	padding: 30px !important;
+	border-radius: @border-radius;
+	border: solid 2px @w !important;
+	box-shadow:@theme-color-serious 0px 0px 6px 3px;
+	-webkit-box-shadow:@theme-color-serious 0px 0px 6px 3px;
+	-moz-box-shadow:@theme-color-serious 0px 0px 6px 3px;
 }
 
 body {
@@ -67,10 +114,14 @@ body {
 
 .carousel-inner img{
     width: 100%;
+    height: 100%;
 }
 
 .container {
-	background-color: @color;
+	background-color: @theme-color-serious-alpha;
+	margin: 10px;
+	padding: 20px;
+	border-radius: @border-radius;
 }
 
 .btn-primary {
@@ -79,7 +130,7 @@ body {
 
 .dropdown-toggle {
 	color: @theme-color;
-	background-color: @color;
+	background-color: @w;
 }
 footer {
 	background-color: @theme-color;

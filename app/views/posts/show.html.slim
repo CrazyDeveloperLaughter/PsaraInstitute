@@ -1,30 +1,39 @@
 p#notice= notice
 .container
-  .row.well
-    .col-md-6.well
-      h4.input-group= @post.subject
-      h5.input-group= @post.date
-    - if @post.picture.present?
+  .form-group
+    .row
       .col-md-6.well
-        .input-group= image_tag(@post.picture_url)
-    - if @post.video.present?  
+        h4.input-group= @post.subject
+        h5.input-group= @post.date
+  .form-group
+    .row
+      - if @post.picture.present?
+        .col-md-6.well
+          .input-group= link_to @post.picture_url.to_s
+            = image_tag(@post.picture_url, width: 250, height: 250)
+  .form-group
+    .row
+      - if @post.video.present?  
+        .col-md-6.well
+          .input-group= link_to @post.video_url.to_s 
+            = image_tag(@post.video_url(:screenshot).to_s, :alt => "ニュース#{@post.id}番", width: 250, height: 250)
+  .form-group
+    .row
       .col-md-6.well
-        .input-group= link_to @post.video_url.to_s { image_tag(@post.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") }
-    .col-md-6.well
-      input-group= @post.body
+        input-group= @post.body
     - if @documents.present?
       - @documents.each do |document|
         - if document.text.present?
           .col-md-6.well
             .input-group= document.text
         - if document.picture
-          .col-md-6.well
-            .input-group
-              p.img-responsive= image_tag(document.picture_url)
+          .responsive.col-md-6.well
+            .input-group.responsive
+              p.responsive.img-responsive= image_tag(document.picture_url)
         - if document.video
-          .col-md-6.well
-            .input-group
-              p.img-responsive= image_tag(document.video_url)
+          .responsive.col-md-6.well
+            .input-group.responsive
+              p= image_tag(document.video_url)
         - if admin_user_signed_in?
           .col-md-6.well
             .input-group= link_to 'Delete', document_path(document), method: :delete, data: { confirm: '削除してもよろしいですか？' }, :class => "btn  btn-primary"
