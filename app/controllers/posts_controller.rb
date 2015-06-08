@@ -79,9 +79,6 @@ class PostsController < ApplicationController
       params.require(:post).permit(:date, :subject, :body, :picture, :video, :tag_list, :genres_list)
     end
 
-    def video
-    end
-
     def set_post_tags_to_gon
       gon.post_tags = @post.tag_list
     end

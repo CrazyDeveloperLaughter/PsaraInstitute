@@ -1,10 +1,11 @@
-ul class="nav nav-tabs"
-  li role="presentation" class="dropdown"
-    a class="dropdown-toggle"
-      .bg-primary.topic プサラ・インスティテュートのロゴマーク
-itemscope itemtype="http://schema.org/Organization" 
-  span itemprop="logo"
-    = link_to image_tag("psara.png", width: 250, height: 200)
+.well
+  ul class="nav nav-tabs"
+    li role="presentation" class="dropdown"
+      a class="dropdown-toggle"
+        .topic プサラ・インスティテュートのロゴマーク
+  itemscope itemtype="http://schema.org/Organization" 
+    span itemprop="logo"
+      = link_to image_tag("psara.png", width: 250, height: 200)
 
 ul class="nav nav-tabs"
   li role="presentation" class="dropdown"
@@ -12,7 +13,7 @@ ul class="nav nav-tabs"
       = render 'logo'
 
 <!-- Button trigger modal -->
-button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"
+button type="button" class="topic" data-toggle="modal" data-target="#myModal"
   Launch サービスへ
 
 <!-- Modal -->
