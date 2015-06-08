@@ -1,5 +1,8 @@
 
 @theme-color-serious: #053164;
+@b: #000;
+@w: #fff;
+
 
 body,
 p,
@@ -10,30 +13,32 @@ td {
   font-size: 13px;
   line-height: 18px;
 }
+
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
-a {
-  color: #000;
-}
+
 a:visited {
-  color: #666;
+  color: none !important;
 }
 
 a:hover {
-  color: @theme-color-serious;
+  color: @theme-color-serious !important;
   background-color: #fff !important;
 
 }
+
 div.field,
 div.actions {
   margin-bottom: 10px;
 }
+
 #notice {
   color: green;
 }
+
 .field_with_errors {
   padding: 2px;
   background-color: red;

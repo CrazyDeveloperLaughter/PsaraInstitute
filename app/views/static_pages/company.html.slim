@@ -5,23 +5,23 @@
         li data-target="#myCarousel" data-slide-to="1"
         li data-target="#myCarousel" data-slide-to="2"
       <!-- カルーセルのスライドするコンテンツ部分 -->
-        .carousel-inner
-          .item.active
-            .text-center=image_tag("image1.png")
-            .container
+        .responsive.carousel-inner
+          .responsive.item.active
+            .screen.responsive.text-center=image_tag("image1.png", class: "responsive")
+            .responsive.container
               .carousel-caption
-                =render :partial => "message2"
+                .responsive.slide-box.slide-shadow=render :partial => "message2"
 
           .item
-            .text-center=image_tag("image2.png")
-            .container
+            .screen.responsive.text-center=image_tag("image2.png")
+            .responsive.container
               .carousel-caption
-                =render :partial => "message2"
+                .responsive.slide-box.slide-shadow=render :partial => "message2"
           .item
-            .text-center=image_tag("image3.png")
-            .container
+            .screen.responsive.text-center=image_tag("image3.png")
+            .responsive.container
               .carousel-caption
-                =render :partial => "message2"
+                .responsive.slide-box.slide-shadow=render :partial => "message2"
         a.left.carousel-control href="#myCarousel" role="buttun" data-slide="prev"
           span.glyphicon-chevron-left.glyphicon
         a.right.carousel-control href="#myCarousel" role="buttun" data-slide="next"
@@ -31,7 +31,7 @@ ul class="nav nav-tabs top-page-slide-show"
     a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample"
       = render 'message'
 <!-- Button trigger modal -->
-button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"
+button type="button" class="topic" data-toggle="modal" data-target="#myModal"
   Launch サービスへ
 
 <!-- Modal -->
