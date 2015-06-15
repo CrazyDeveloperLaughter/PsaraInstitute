@@ -4,6 +4,8 @@ p#notice= notice
     .col-md-6.well
       h4.input-group= @blog.subject
       h5.input-group= @blog.date
+    .col-md-6.well
+      h5.input-group= @blog.body
     - if @blog.picture.present?
       .col-md-6.well
         .input-group= image_tag(@blog.picture_url) if @blog.picture.present?
