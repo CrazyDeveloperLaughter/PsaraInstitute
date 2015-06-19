@@ -7,7 +7,8 @@ html {
 body {
   line-height: 1.7em;
   font-size: 14px;
-  background-color: #053164;
+  background-color: rgba(005, 49, 100, 0.1);
+  color: rgb();
 }
 #body_bg {
   background-attachment: scroll;
@@ -88,7 +89,7 @@ body {
   z-index: 20;
 }
 p.site-slogan {
-  color: #b1a5bd;
+  color: #fff;
   font-size: 11px;
   letter-spacing: 8px;
   margin: 0;
@@ -151,7 +152,7 @@ p.site-slogan {
 /* Copyright */
 #copyright {
   font-size: 14px;
-  color: #eeeeee;
+  color: #000;
 }
 #copyright p {
   padding: 0;

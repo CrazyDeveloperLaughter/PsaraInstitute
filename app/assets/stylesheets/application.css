@@ -17,10 +17,23 @@
  *= require tagit.ui-zendesk
  *= require_posts
  *= require_self
- *= require_bootstrap_and_override
+ *= require_bootstrap_and_overrides
  */
 
 .ui-helper-hidden-accessible {
   display: none;
 }
 
+.topic {
+	-moz-linear-gradient(left top, #053164, #1073b9) !important;
+	-webkit-gradient(linear, left top, right bottom, from(#053164), to(#1073b9)) !important;
+	border-radius: @border-radius-topic !important;
+	color: @w !important;
+	padding: @padding !important;
+	background-color: @theme-color-serious !important;
+	font-family:'メイリオ' !important;
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+	border: solid 2px @w !important;
+	border-radius: @border-radius !important;
+}

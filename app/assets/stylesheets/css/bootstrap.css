@@ -27,6 +27,8 @@ progress,
 video {
   display: inline-block;
   vertical-align: baseline;
+  padding-top: 20px;
+  margin-top: 20px;
 }
 audio:not([controls]) {
   display: none;
@@ -268,8 +270,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
-  background-color: #ffffff;
+  color: #000;
+  background-color: rgba(005, 49, 100, 0.5);
 }
 input,
 button,
@@ -553,8 +555,16 @@ a.text-danger:hover {
   color: #843534;
 }
 .bg-primary {
-  color: #fff;
-  background-color: #3c3343;
+  color: #053164;
+  font-family: 
+  background-color: none;
+  padding: 10px;
+  -moz-linear-gradient(left top, #053164, #1073b9);
+  -webkit-gradient(linear, left top, right bottom, from(#053164), to(#1073b9));
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 15px;
 }
 a.bg-primary:hover {
   background-color: #221d26;
@@ -2178,9 +2188,12 @@ fieldset[disabled] .btn-default.active {
   background-color: #333333;
 }
 .btn-primary {
-  color: #ffffff;
-  background-color: #3c3343;
-  border-color: #2f2835;
+  color: #fff;
+  background-color: rgba(005, 49, 100, 1);
+  padding: 10px;
+  -moz-linear-gradient(left top, #053164, #1073b9);
+  -webkit-gradient(linear, left top, right bottom, from(#053164), to(#1073b9));
+  margin: 10px;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -2188,8 +2201,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #221d26;
-  border-color: #100e12;
+  background-color: #053164;
+
 }
 .btn-primary:active,
 .btn-primary.active,

@@ -19,35 +19,8 @@ html lang="en"
     = include_gon
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     
-  body data-spy="scroll" data-target=".navbar-example"
-    nav#container_header.navbar.navbar-inverse.navbar-fixed-top role="navigation"
-      .container.navbar-inverse
-        .navbar-header
-          button.navbar-toggle.btn.navbar-btn type="button" data-toggle="collapse" data-target="#nav-collapse"
-            span.sr-only Toggle Navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-        #nav-collapse.collapse.navbar-collapse.navbar-inverse.navbar-responsive-collapse
-          ul.nav.navbar-nav
-            li= link_to image_tag("psara.png", width: 25, height: 20)
-            li= link_to "プサラインスティチュート", static_pages_home_path
-            li= link_to "PsaraMedicalNews", posts_path
-            li= link_to "News", blogs_path
-            li= link_to "ロゴマークの由来", static_pages_logo_path
-            li= link_to "活動内容", static_pages_job_path
-            li= link_to "ヴィジョン", root_path
-            li= link_to "お問い合わせ", inquiry_path
-          ul.social-icons.circle.pull-right
-            li.social-rss
-              a href="#" target="_blank" title="RSS"
-            li.social-twitter
-              a href="#" target="_blank" title="Twitter"
-            li.social-facebook
-              a href="#" target="_blank" title="Facebook"
-            li.social-googleplus
-              a href="#" target="_blank" title="GooglePlus"
-            li.container.navbar-form.navbar-right
+  body stylr="background-image: none;" data-spy="scroll" data-target=".navbar-example"
+    = render :partial => 'commons/header'
     = bootstrap_flash
     - set_meta_tags :title => 'PsaraInstitute'
     - set_meta_tags :description => ''
