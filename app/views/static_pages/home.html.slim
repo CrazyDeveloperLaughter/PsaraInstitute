@@ -1,22 +1,2 @@
-ul class="nav nav-tabs"
-  li role="presentation" class="dropdown"
-    a class="dropdown-toggle" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample"
-      = render 'psara'
+.col-md-offset-1.col-xs-offset-1.col-lg-offset-1.col-md-10.col-xs-10.col-lg-10= render 'psara'
 
-br
-<!-- Button trigger modal -->
-button type="button" class="topic" data-toggle="modal" data-target="#myModal"
-  Launch サービスへ
-
-<!-- Modal -->
-.modal.fade id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-  .modal-dialog
-    .modal-content
-      .modal-header
-        button type="button" class="close" data-dismiss="modal" aria-label="Close"
-          span aria-hidden="true"&times;
-        h4.modal-title id="myModalLabel" サービス
-        .modal-body
-          = render 'jobs'
-      .modal-footer
-        button type="button" class="btn btn-default" data-dismiss="modal" Close

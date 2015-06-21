@@ -6,8 +6,8 @@
     .col-lg-6
       .input-group
         span.input-group-btn
-          button.btn.btn-default type="button" タイトル
-        = f.search_field :body, class: "form-control", placeholder: "Search for ..."
+          button.btn.btn-default type="button"タイトル
+        = f.search_field :subject, class: "form-control", placeholder: "Search for ..."
     .col-lg-6
       .input-group
         span.input-group-btn
@@ -24,19 +24,25 @@ h4.h4-title.glyphicon.glyphicon-globe Psara Medical News
     .responsive
         .responsive.input-group
           .responsive.input-group-btn.well
-            .responsive.well.boy
-              = "No. #{post.id}"
-              = post.subject
-              small.pull-right= post.date
+            .responsive.well
+              ul
+                li
+                  = "No. #{post.id}"
+                  = "\s/\s"
+                  = sort_link(@q, :subject) + ":"
+                  = post.subject
+                  = "\s/\s"
+                  = sort_link(@q, :date) + ":"
+                  = post.date
             - if post.picture.present?
-              .responsive.well
-                .responsive= link_to image_tag(post.picture.url, class: "image", :alt => "ニュース#{params[:id]}番", width: 250, height: 250), post_path(post.id)
-
+              .img-responsive.well alt="Responsive image"
+                = link_to image_tag(post.picture.url, width: 250, height: 250), post
             - if post.video.present?
-              .responsive.well
-                .responsive= link_to image_tag(post.video_url(:screenshot).to_s, id: "image", :alt => "ニュース#{params[:id]}番", width: 250, height: 250, id: "video"), post_path(post.id)
+              .img-responsive.well alt="Responsive image"
+                = link_to image_tag(post.video_url(:screenshot), width: 250, height: 250), post
             - if post.body.present?
               p.post_text.well.responsive
+                = sort_link(@q, :summary) + ":\s"
                 strong= post.body
     
             .input-group

@@ -4,18 +4,31 @@
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+  <div class="form-group">
+    <%= f.label :password %><br />
+      <div class="row margin-bottom-20 padding-5">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-0">
+          <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+        </div>
+      </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <div class="form-group">
+    <%= f.label :password_confirmation %><br />
+      <div class="row margin-bottom-20 padding-5">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-0">
+          <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+        </div>
+      </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
+
+  <div class="form-group">
+      <div class="row margin-bottom-20 padding-5">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-0">
+          <%= f.submit "Change my password" , :class => "form-control btn-primary" %>
+        </div>
+      </div>
   </div>
 <% end %>
 
