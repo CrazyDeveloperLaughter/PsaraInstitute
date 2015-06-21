@@ -968,7 +968,7 @@ h1.logo-text a {
   text-indent: 20px;
 }
 .slicknav_nav li li a {
-  color: rgb(005, 49, 100);
+  color: #fff;
 }
 .slicknav_nav .slicknav_item a {
   padding: 0;
@@ -979,7 +979,7 @@ h1.logo-text a {
 .slicknav_nav a:focus,
 .slicknav_nav .slicknav_item:focus {
   background-color: rgba(0, 0, 0, 0.2) !important;
-  color: rgb(005, 49, 100);
+  color: #fff;
 }
 .slicknav_nav .slicknav_txtnode {
   margin-left: 15px;
@@ -1026,7 +1026,6 @@ a {
   color: rgb(005, 49, 100);
 }
 a:hover {
-  color: #000);
   text-decoration: none;
 
 }
