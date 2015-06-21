@@ -20,7 +20,8 @@ html lang="en"
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     
   body stylr="background-image: none;" data-spy="scroll" data-target=".navbar-example"
-    = render :partial => 'commons/header'
+    header
+      = render 'commons/header'
     = bootstrap_flash
     - set_meta_tags :title => 'PsaraInstitute'
     - set_meta_tags :description => ''
