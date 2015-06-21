@@ -88,3 +88,6 @@ gem 'sitemap_generator'
 gem 'coderay'
 
 gem 'bootstrap-wysihtml5-rails', '~> 0.3.3.6'
+
+gem 'gmaps4rails'
+gem 'geocoder'
