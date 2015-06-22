@@ -25,9 +25,11 @@ h4.h4-title.glyphicon.glyphicon-globe PSI プサラ研究所  医学ニュース
         .responsive.input-group
           .responsive.input-group-btn.well
             .well
-              = link_to "No. #{post.id}/\s\s#{post.subject}/\s\s#{post.date}/", post
+              = link_to "No. #{post.id}/", post
               = sort_link(@q, :subject) + ":"
+              = link_to "\s\s#{post.subject}/", post
               = sort_link(@q, :date) + ":"
+              = link_to "\s\s#{post.date}/", post
             - if post.picture.present?
               .img-responsive.well alt="Responsive image"
                 = link_to image_tag(post.picture.url, width: 250, height: 250), post
