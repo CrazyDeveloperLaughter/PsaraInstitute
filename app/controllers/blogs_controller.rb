@@ -6,9 +6,9 @@ class BlogsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @blogs = params[:tag].present? ? Blog.tagged_with(params[:tag]) : Blog.all
+    @blogs = Blog.all
     @q = @blogs.search(params[:q])
-    @blogs = @q.result(distinct: true).includes(:tags)
+    @blogs = @q.result(distinct: true)
   end
 
   def show
