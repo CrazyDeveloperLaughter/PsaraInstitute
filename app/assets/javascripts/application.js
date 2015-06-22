@@ -39,3 +39,7 @@ $(document).scroll(function() {
     }
 });
 
+function put_editor_data() {
+	$("TEXTAREA[name=editor_data]").val($(".textarea").html());
+	return true;
+}

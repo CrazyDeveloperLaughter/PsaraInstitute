@@ -26,10 +26,9 @@ javascript:
       dt 動画
       dd= f.file_field :video, :accept => 'video/*'
       dt 本文 
-      .textarea= f.text_area :body
-
+      .textarea name="editor_data"= f.text_area :body
   .clearfix
     p.pull-right
-      = f.submit '投稿', :class => "btn btn-success"
+      = f.submit '投稿', :class => "btn btn-success", :onsubmit => "return put body()"
       = link_to '表示', @post, :class => "btn btn-primary"
       = link_to '戻る', posts_path, :class => "btn btn-warning"

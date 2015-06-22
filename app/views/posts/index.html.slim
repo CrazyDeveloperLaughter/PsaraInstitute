@@ -24,30 +24,20 @@ h4.h4-title.glyphicon.glyphicon-globe Psara Medical News
     .responsive
         .responsive.input-group
           .responsive.input-group-btn.well
-            .responsive.well
-              ul
-                li
-                  = "No. #{post.id}"
-                  = "\s/\s"
-                  = sort_link(@q, :subject) + ":"
-                  = post.subject
-                  = "\s/\s"
-                  = sort_link(@q, :date) + ":"
-                  = post.date
+            .well
+              = link_to "No. #{post.id}/\s\s#{post.subject}/\s\s#{post.date}/", post
+              = sort_link(@q, :subject) + ":"
+              = sort_link(@q, :date) + ":"
             - if post.picture.present?
               .img-responsive.well alt="Responsive image"
                 = link_to image_tag(post.picture.url, width: 250, height: 250), post
             - if post.video.present?
               .img-responsive.well alt="Responsive image"
                 = link_to image_tag(post.video_url(:screenshot), width: 250, height: 250), post
-            - if post.body.present?
-              p.post_text.well.responsive
-                = sort_link(@q, :summary) + ":\s"
-                strong= post.body
     
             .input-group
               p.pull-right
-               = link_to '詳細', post , :class => "btn btn-primary"
+               = link_to '詳細', post , :class => "btn btn-info"
               - if admin_user_signed_in?
                 = link_to '編集', edit_post_path(post) , :class => "btn btn-success"
                 = link_to '削除', post, method: :delete, data: { confirm: '本当に削除しますか？' } , :class => "btn btn-warning"
