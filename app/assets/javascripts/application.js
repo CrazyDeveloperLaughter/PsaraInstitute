@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require tag-it
+//= require bootstrap
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
@@ -38,3 +39,7 @@ $(document).scroll(function() {
     }
 });
 
+function put_editor_data() {
+	$("TEXTAREA[name=editor_data]").val($(".textarea").html());
+	return true;
+}

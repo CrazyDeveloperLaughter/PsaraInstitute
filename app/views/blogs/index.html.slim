@@ -7,7 +7,7 @@
       .input-group
         span.input-group-btn
           button.btn.btn-default type="button" タイトル
-        = f.search_field :body, class: "form-control", placeholder: "Search for ..."
+        = f.search_field :subject, class: "form-control", placeholder: "Search for ..."
     .col-lg-6
       .input-group
         span.input-group-btn
@@ -19,7 +19,7 @@
 
 h4.h4-titleglyphicon.glyphicon-pencil Blog of Psara
 - @blogs.each do |blog|
-  .well
+  .well.col-lg-offset-1
     .row
       .col-lg-6
         .input-group

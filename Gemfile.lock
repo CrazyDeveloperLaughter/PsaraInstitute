@@ -89,6 +89,8 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.4.0)
+    geocoder (1.2.9)
+    gmaps4rails (2.1.2)
     gon (5.2.3)
       actionpack (>= 2.3.0)
       json
@@ -313,6 +315,8 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   daemon-spawn
   devise
+  geocoder
+  gmaps4rails
   gon
   hirb
   hirb-unicode

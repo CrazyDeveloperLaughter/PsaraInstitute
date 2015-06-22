@@ -1,14 +1,15 @@
 class PostsController < ApplicationController
   before_action :authenticate_admin_user!, except: [:show, :index]
+  before_action :authenticate_user!, only: [:show]
   before_action :set_post, only: [:edit, :update, :destroy]
   before_action  :set_post_tags_to_gon, only: [:edit]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = params[:tag].present? ? Post.tagged_with(params[:tag]) : Post.all
-    @q = @posts.search(params[:q])
-    @posts = @q.result(distinct: true).includes(:tags)
+    @posts = Post.all
+    @q = @posts.search(params[:q_in])
+    @posts = @q.result(distinct: true)
   end
 
   def show
