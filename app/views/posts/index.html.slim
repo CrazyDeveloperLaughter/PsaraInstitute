@@ -40,6 +40,7 @@ h4.h4-title.glyphicon.glyphicon-globe PSI プサラ研究所  医学ニュース
             .input-group
               p.pull-right
                = link_to '詳細', post , :class => "btn btn-info"
+               = link_to '詳細のご覧には会員登録が必要です！', new_user_registration_path
               - if admin_user_signed_in?
                 = link_to '編集', edit_post_path(post) , :class => "btn btn-success"
                 = link_to '削除', post, method: :delete, data: { confirm: '本当に削除しますか？' } , :class => "btn btn-warning"
