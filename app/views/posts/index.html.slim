@@ -32,10 +32,10 @@ h4.h4-title.glyphicon.glyphicon-globe PSI プサラ研究所  医学ニュース
               = link_to "\s\s#{post.date}/", post
             - if post.picture.present?
               .img-responsive.well alt="Responsive image"
-                = link_to image_tag(post.picture.url, width: 250, height: 250), post
+                = link_to image_tag(post.picture.url, width: 250), post
             - if post.video.present?
               .img-responsive.well alt="Responsive image"
-                = link_to image_tag(post.video_url(:screenshot), width: 250, height: 250), post
+                = link_to image_tag(post.video_url(:screenshot), width: 250), post
     
             .input-group
               p.pull-right
