@@ -2,24 +2,37 @@
                     <div id="hornav" class="pull-right">
                                     <ul id="hornavmenu" class="nav navbar-nav">
                                         <li>
-                                            <%= link_to "プサラ・インスティテュート", static_pages_home_path %>
+                                            <%= link_to "Home", static_pages_home_path %>
                                         </li>
                                         <li>
-                                            <%= link_to "ロゴマークの由来", static_pages_logo_path %>
-                                        </li>
-                                       <li>
-                                            <%= link_to "活動内容", static_pages_job_path %>
+                                            <span>PSARA Institute</span>
+                                            <ul>
+                                                <li>
+                                                    <%= link_to "プサラインスティチュート", static_pages_home_path %>
+                                                </li>
+                                                <li>
+                                                    <%= link_to "ロゴマークの由来", static_pages_logo_path %>
+                                                </li>
+                                                <li>
+                                                    <%= link_to "活動内容", static_pages_job_path %>
+                                                </li>
+                                                <li>
+                                                    <%= link_to "ヴィジョン", root_path %> 
+                                                </li>
+                                            </ul>
                                         </li>
                                         <li>
-                                            <%= link_to "ヴィジョン", root_path %> 
+                                            <span>Blog</span>
+                                            <ul>
+                                                <li>
+                                                    <%= link_to "Blog of Psara", blogs_path %>
+                                                </li>
+                                            </ul>
+                                        </li>                                        
+                                        <li>
+                                            <%= link_to "PSI プサラ研究所  医学ニュース", posts_path %>
                                         </li>
                                         <li>
-                                            <%= link_to "Blog of Psara", blogs_path %>
-                                        </li>
-                                        <li>
-                                            <%= link_to "News", posts_path %>
-                                        </li>
-                                        <!-- <li>
                                             <span>Products</span>
                                             <ul>
                                                 <li>
@@ -29,18 +42,9 @@
                                                     <a href="#">Books</a>
                                                 </li>
                                             </ul>
-                                        </li> -->
-                                        <% if user_signed_in? %>
-                                        <% else %>
+                                        </li>                                        
                                         <li>
-                                            <%= link_to  "ログイン", new_user_session_path %>
-                                        </li>
-                                        <li>
-                                            <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
-                                        </li>
-                                        <% end %>
-                                        <li>
-                                            <span>会員登録</span>
+                                            <span>会員登録 etc...</span>
                                             <ul>
                                                 <% if user_signed_in? %>
                                                     <li>
@@ -49,6 +53,12 @@
                                                 <% else %>
                                                     <li>
                                                         <%= link_to "会員登録", new_user_registration_path %>
+                                                    </li>
+                                                    <li>
+                                                        <%= link_to  "ログイン", new_user_session_path %>
+                                                    </li>
+                                                    <li>
+                                                        <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
                                                     </li>
                                                 <% end %>
                                             </ul>
