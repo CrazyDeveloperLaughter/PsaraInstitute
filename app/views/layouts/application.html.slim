@@ -20,13 +20,12 @@ html lang="en"
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     
   body stylr="background-image: none;" data-spy="scroll" data-target=".navbar-example"
-    header
-      = render :partial => 'commons/header'
     = bootstrap_flash
     - set_meta_tags :title => 'PsaraInstitute'
     - set_meta_tags :description => ''
     - set_meta_tags :keywords => ''
     - set_meta_tags :canonical => ''
+    = render :partial => 'commons/header'
     = yield
     footer
       = render :partial => "commons/footer"
