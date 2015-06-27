@@ -50,6 +50,7 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { :host => 'psara-institute.com' }
   config.action_mailer.delivery_method = :smtp
@@ -57,8 +58,8 @@ Rails.application.configure do
   :address => 'smtp.sendgrid.new',
   :port => '25',
   :authentication => "plain",
-  :user_name => 'app34862435@heroku.com',
-  :password => 'kbrhc1jk',
+  :user_name => ENV['SENDGRID_USERNAME'],
+  :password => ENV['SENDGRID_PASSWORD'],
   :domain => 'heroku.com',
   :enable_starttls_auto => true
   }
