@@ -52,13 +52,13 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => 'psara-institute.com' }
+  config.action_mailer.default_url_options = { :host => 'psara-institute.com/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   :address => 'smtp.sendgrid.net',
   :port => 587,
   :authentication => "login",
-  :user_name => 'ENV[SENDGRID_USERNAME]',
+  :user_name => 'app34862435@heroku.com',
   :password => 'rjidkzvs8747',
   :domain => 'psara-institute.com/',
   :enable_starttls_auto => true
