@@ -91,3 +91,5 @@ gem 'bootstrap-wysihtml5-rails', '~> 0.3.3.6'
 
 gem "gmaps4rails"
 gem "geocoder"
+
+gem 'sendgrid-rails', '~> 2.0'

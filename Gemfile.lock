@@ -245,6 +245,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sendgrid-rails (2.0.4)
+      actionmailer (>= 3.0.0)
+      activesupport (>= 2.1.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -339,6 +342,7 @@ DEPENDENCIES
   resque_mail_queue
   resque_mailer
   sdoc (~> 0.4.0)
+  sendgrid-rails (~> 2.0)
   sitemap_generator
   slim-rails
   spring
