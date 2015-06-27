@@ -9,6 +9,7 @@ Encoding.default_internal = Encoding::UTF_8
 Rails.application.initialize!
 
 ActionMailer::Base.delivery_method = :sendmail
+ActionMailer::Base.default_url_options = { :host => "www.psara-institute.com" }
 ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.raise_delivery_errors = true
 ActionMailer::Base.smtp_settings = {

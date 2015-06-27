@@ -61,5 +61,5 @@ Rails.application.configure do
   :password => 'kbrhc1jk',
   :domain => 'muumuu-domain.com',
   :enable_starttls_auto => true
-}
+  }
 end
