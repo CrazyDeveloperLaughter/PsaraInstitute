@@ -59,7 +59,7 @@ Rails.application.configure do
   :port => 587,
   :authentication => "login",
   :user_name => 'ENV[SENDGRID_USERNAME]',
-  :password => 'kbrhc1jk',
+  :password => 'rjidkzvs8747',
   :domain => 'psara-institute.com/',
   :enable_starttls_auto => true
   }
