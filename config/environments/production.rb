@@ -59,8 +59,8 @@ Rails.application.configure do
   :port => 587,
   :authentication => "login",
   :user_name => 'ENV[SENDGRID_USERNAME]',
-  :password => 'ENV[SENDGRID_PASSWORD]',
-  :domain => 'muumuu-domain.com',
+  :password => 'kbrhc1jk',
+  :domain => 'psara-institute.com/',
   :enable_starttls_auto => true
   }
 end
