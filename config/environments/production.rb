@@ -60,7 +60,7 @@ Rails.application.configure do
   :authentication => "plain",
   :user_name => 'ENV[SENDGRID_USERNAME]',
   :password => 'ENV[SENDGRID_PASSWORD]',
-  :domain => 'psara-institute.com',
+  :domain => 'muumuu-domain.com',
   :enable_starttls_auto => true
   }
 end
