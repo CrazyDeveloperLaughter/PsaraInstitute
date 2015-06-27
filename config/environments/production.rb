@@ -55,7 +55,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'psara-institute.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :address => 'smtp.sendgrid.net',
+  :address => 'smtp.gmail.com',
   :port => '587',
   :authentication => "plain",
   :user_name => 'app34862435@heroku.com',
