@@ -23,3 +23,6 @@ vendor/bundler
 
 # Ignore db seeds
 db/seeds.rb
+
+# Ignore images, vieos and cds
+public/uploads/
