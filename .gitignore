@@ -25,4 +25,7 @@ vendor/bundler
 db/seeds.rb
 
 # Ignore images, vieos and cds
-public/uploads/
+public/uploads/*
+
+# Ignore configurations
+config/environments/*
