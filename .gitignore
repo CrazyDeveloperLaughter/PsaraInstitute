@@ -28,4 +28,3 @@ db/seeds.rb
 public/uploads/*
 
 # Ignore configurations
-config/environments/*
