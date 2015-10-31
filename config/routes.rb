@@ -56,6 +56,8 @@ Rails.application.routes.draw do
 
   get 'static_pages/google-web-master' => 'static_pages#google2fce42d86d6074a7.html'
 
+  get 'static_pages/privacy_policy'
+
   root to: 'static_pages#company', :layout => "layouts/slide"
   
   get 'inquiry' => 'inquiry#index'              # 入力画面

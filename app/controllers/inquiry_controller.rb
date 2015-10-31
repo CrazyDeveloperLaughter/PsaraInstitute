@@ -27,6 +27,9 @@ class InquiryController < ApplicationController
     render :action => 'thanks'
   end
 
+  def privacy_policy
+  end
+
   private
   def inquiry_params
     params.require(:inquiry).permit(:name, :email, :message)
