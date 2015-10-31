@@ -28,3 +28,6 @@ db/seeds.rb
 public/uploads/*
 
 # Ignore configurations
+
+# Ignore assets pre compile
+public/assets

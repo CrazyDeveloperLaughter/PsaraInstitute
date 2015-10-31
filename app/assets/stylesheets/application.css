@@ -12,6 +12,7 @@
  *= require_tree ./shared
  *= require_tree ./css
  *= require_scaffold
+ *= require_users
  *= require_static_pages
  *= require jquery.tagit
  *= require tagit.ui-zendesk
@@ -36,4 +37,11 @@
 	margin-bottom: 10px !important;
 	border: solid 2px @w !important;
 	border-radius: @border-radius !important;
+}
+
+.infobox {
+   height: 500px;  /* 高さを制限(※) */
+   overflow: scroll; /* スクロールバーを表示(※) */
+   border: #053164 1px dashed;  /* 枠線を追加 */
+   background-color: rgba(10, 115, 185, 0.1); /* 背景色を追加 */
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511104605) do
+ActiveRecord::Schema.define(version: 20151031215823) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(version: 20150511104605) do
     t.string   "avatar"
     t.boolean  "remove_avatar"
     t.string   "avatae_cache"
+    t.boolean  "accept_privacy_policy"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
