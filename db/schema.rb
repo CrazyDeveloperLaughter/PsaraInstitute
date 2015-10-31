@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150415080253) do
+ActiveRecord::Schema.define(version: 20150511104605) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -68,21 +68,6 @@ ActiveRecord::Schema.define(version: 20150415080253) do
     t.string   "blog_id"
   end
 
-  create_table "mail_documents", force: true do |t|
-    t.text     "text"
-    t.string   "video"
-    t.string   "picture"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "mail_magazine_id"
-  end
-
-  create_table "mail_magazines", force: true do |t|
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "posts", force: true do |t|
     t.date     "date"
     t.string   "subject"
@@ -91,6 +76,13 @@ ActiveRecord::Schema.define(version: 20150415080253) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "video"
+  end
+
+  create_table "squires", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taggings", force: true do |t|
