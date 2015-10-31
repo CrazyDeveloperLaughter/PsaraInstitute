@@ -112,8 +112,6 @@ body {
   position: absolute;
 }
 .logo a {
-  left: 15px;
-  top: 30px;
   display: block;
   position: relative;
   z-index: 20;
@@ -209,6 +207,7 @@ p.site-slogan {
   width: 100%;
   color: #777777 !important;
 }
+
 h1.logo-text a {
   display: inline;
 }
@@ -216,9 +215,11 @@ h1.logo-text a {
   display: inline !important;
   width: auto !important;
 }
+
 /*-----------------------------------------------------------------------------------*/
 /* Utility Classes */
 /*-----------------------------------------------------------------------------------*/
+
 .color-default {
   color: #333333;
 }

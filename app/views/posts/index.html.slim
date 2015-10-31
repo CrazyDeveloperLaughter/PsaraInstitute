@@ -17,7 +17,7 @@
       .input-group.input-group-btn type="button"
         = f.submit class: "form-control btn-primary btn", placeholder: "検索"
 
-h4.h4-title.glyphicon.glyphicon-globe Psara Medical News
+h4.h4-title.glyphicon.glyphicon-globe PSI プサラ研究所  医学ニュース
 - @posts.each do |post|
   .form-group
     .row
@@ -25,19 +25,22 @@ h4.h4-title.glyphicon.glyphicon-globe Psara Medical News
         .responsive.input-group
           .responsive.input-group-btn.well
             .well
-              = link_to "No. #{post.id}/\s\s#{post.subject}/\s\s#{post.date}/", post
+              = link_to "No. #{post.id}/", post
               = sort_link(@q, :subject) + ":"
+              = link_to "\s\s#{post.subject}/", post
               = sort_link(@q, :date) + ":"
+              = link_to "\s\s#{post.date}/", post
             - if post.picture.present?
               .img-responsive.well alt="Responsive image"
-                = link_to image_tag(post.picture.url, width: 250, height: 250), post
+                = link_to image_tag(post.picture.url, width: 250), post
             - if post.video.present?
               .img-responsive.well alt="Responsive image"
-                = link_to image_tag(post.video_url(:screenshot), width: 250, height: 250), post
+                = link_to image_tag(post.video_url(:screenshot), width: 250), post
     
             .input-group
               p.pull-right
                = link_to '詳細', post , :class => "btn btn-info"
+               = link_to '詳細のご覧には会員登録が必要です！', new_user_registration_path
               - if admin_user_signed_in?
                 = link_to '編集', edit_post_path(post) , :class => "btn btn-success"
                 = link_to '削除', post, method: :delete, data: { confirm: '本当に削除しますか？' } , :class => "btn btn-warning"

@@ -9,13 +9,15 @@
                             <div class="col-md-3">
                                 <h3 class="margin-bottom-10">Contact</h3>
                                 <p>Email:
-                                    <a href="mailto:">info@website.com</a>
+                                    <a href="mailto:info@psara.co.jp">info@psara.co.jp</a>
                                     <br />Website:
-                                    <a href="http://www.psara-institute.com">www.website.com</a>
-                                    <br />プサラ研究所:
-                                    <a href=""></a>
+                                    <a href="http://www.psara-institute.com">www.psara-institute.com</a>
+                                    <br />プサラ研究所: Coming soon ...
+                                    <a href="#"></a>
+                                    <br />Tel:
+                                    <a href="tel:050-6865-3882">050-6865-3882</a>
                                     <br />Fax:
-                                    <a href="fax:+415.123.4567">#faxnumber</a>
+                                    <a href="fax:+415.123.4567">042-633-0911</a>
                                 </p>
                             </div>
                             <!-- End Contact Details -->
@@ -27,7 +29,7 @@
                                         <a class="fa-tasks" href="#">Placerat facer possim</a>
                                     </li> -->
                                     <li>
-                                        <%= link_to "ユーザー登録", new_user_registration_path, :class => "fa-users" %>
+                                        <%= link_to "ユーザー登録", new_user_registration_path %>
                                     </li>
                                     <li>
                                         <!--<div class="fa-signal">
@@ -44,6 +46,22 @@
                     <div class="row">
                         <div id="copyright" class="margin-top-10">
                             <p>Copyrights (C) 2015 Psara Institute Ltd. All rights reserved.</p>
+                            <a class="btn" href="http://twitter.com/share?url=[<%= request.url %>]&text=[任意のテキスト]&via=[ツイート内に含まれるユーザー名]&related=[関連アカウント]" target="_blank">
+                            <%= image_tag("icons/twitter.jpg") %>
+
+                            <a class="btn" href="http://www.facebook.com/share.php?u=[共有したいURL]" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+                            <%= image_tag("icons/facebook.jpg") %>
+                            </a>
+
+                            <!--<script src="https://apis.google.com/js/plusone.js"></script>
+                            <g:plus action="share"></g:plus>
+                            <br />
+                            <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share">
+                            <% image_tag("icons/tumblr.jpg") %>
+                            </a>
+
+                            <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://secure.assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script> -->
+
                         </div>
                     </div>
                 </div>

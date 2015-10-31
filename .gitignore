@@ -20,3 +20,11 @@ vendor/bundle
 
 # Ignore bundler gems.
 vendor/bundler
+
+# Ignore db seeds
+db/seeds.rb
+
+# Ignore images, vieos and cds
+public/uploads/*
+
+# Ignore configurations
